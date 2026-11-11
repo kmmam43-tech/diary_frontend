@@ -1,0 +1,12 @@
+{
+  "name": "challenge-intervention-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve . -l 8080",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

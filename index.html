@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="도전행동을 이해하고 중재방안을 함께 정하는 대화형 도구" />
+    <title>함께 찾는 중재방안</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">행동을 관찰하고, 함께 방법을 찾습니다</p>
+        <h1>함께 찾는<br /><span>중재방안</span></h1>
+        <p class="intro">관찰한 도전행동을 적어주세요. 대화를 통해 맥락을 살피고 실행 가능한 중재방안 초안을 만듭니다.</p>
+      </header>
+
+      <section class="card input-card" id="behavior-section">
+        <div class="step"><span>01</span> 도전행동 기록</div>
+        <form id="behavior-form">
+          <label for="challenge-behavior">어떤 행동을 관찰했나요?</label>
+          <textarea id="challenge-behavior" rows="7" minlength="3" maxlength="5000" required placeholder="예: 수업이 시작되고 10분 정도 지나면 자리에서 반복해서 일어나 교실 뒤편을 걷습니다."></textarea>
+          <p class="hint">해석보다 눈으로 관찰할 수 있는 행동을 구체적으로 적으면 도움이 됩니다.</p>
+          <button class="primary" type="submit">대화 시작하기 <span>→</span></button>
+          <p class="status" id="behavior-status" role="status"></p>
+        </form>
+      </section>
+
+      <section class="workspace hidden" id="conversation-section" aria-live="polite">
+        <div class="chat-panel card">
+          <div class="panel-heading">
+            <div class="step"><span>02</span> 맥락 살피기</div>
+            <button class="text-button" id="reset-button" type="button">처음부터</button>
+          </div>
+          <div class="messages" id="messages"></div>
+          <form class="chat-form" id="chat-form">
+            <label class="sr-only" for="chat-input">답변 입력</label>
+            <textarea id="chat-input" rows="2" maxlength="4000" required placeholder="관찰한 내용을 더 알려주세요."></textarea>
+            <button class="send" type="submit" aria-label="메시지 보내기">↑</button>
+          </form>
+        </div>
+
+        <div class="intervention-panel card">
+          <div class="step"><span>03</span> 중재방안 정하기</div>
+          <p class="subtle">제안 내용을 검토하고 상황에 맞게 직접 수정한 뒤 저장하세요.</p>
+          <label for="intervention">중재방안 초안</label>
+          <textarea id="intervention" rows="15" minlength="3" maxlength="10000" required></textarea>
+          <button class="primary" id="save-button" type="button">중재방안 확정 및 저장</button>
+          <p class="status" id="status" role="status"></p>
+        </div>
+      </section>
+
+      <footer>이 도구는 전문적인 진단이나 치료를 대체하지 않습니다. 즉각적인 위험이 있다면 지역 응급 서비스와 전문가의 도움을 우선하세요.</footer>
+    </main>
+    <script src="config.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
